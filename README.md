@@ -4,6 +4,14 @@
 
 # Depth Anything ONNX
 
+- PINTO test S -> B -> L
+
+  https://github.com/PINTO0309/Depth-Anything-ONNX/assets/33194443/b57fa49e-5225-46f1-8b58-986b8e21cb9c
+      
+  https://github.com/PINTO0309/Depth-Anything-ONNX/assets/33194443/3f0a411c-f680-4fd1-a0b0-4b62406e266d
+      
+  https://github.com/PINTO0309/Depth-Anything-ONNX/assets/33194443/688d3c4f-408e-4d2b-aaa4-8fc44f548dac
+
 Open Neural Network Exchange (ONNX) compatible implementation of [Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data](https://github.com/LiheYoung/Depth-Anything).
 
 <p align="center"><img src="assets/sample.png" width=90%>
