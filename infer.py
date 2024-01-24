@@ -5,7 +5,7 @@ import numpy as np
 import onnxruntime as ort
 
 from depth_anything.util.transform import load_image
-
+import time
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
@@ -56,7 +56,9 @@ def infer(device: int, model: str, viz: bool = True):
         if orig_image is None:
             break
 
+        start_time = time.perf_counter()
         depth = session.run(None, {"input": inference_image})[0]
+        elapsed_time = time.perf_counter() - start_time
 
         depth = cv2.resize(depth[0, 0], (orig_w, orig_h))
         depth = (depth - depth.min()) / (depth.max() - depth.min()) * 255.0
@@ -98,6 +100,9 @@ def infer(device: int, model: str, viz: bool = True):
                 )
 
             final_result = cv2.vconcat([caption_space, combined_results])
+
+            cv2.putText(final_result, f'{elapsed_time*1000:.2f} ms', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2, cv2.LINE_AA)
+            cv2.putText(final_result, f'{elapsed_time*1000:.2f} ms', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (13, 150, 196), 1, cv2.LINE_AA)
 
             cv2.imshow("depth", final_result)
             video_writer.write(np.vstack([orig_image, depth_color]))
