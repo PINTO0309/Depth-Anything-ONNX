@@ -4,6 +4,12 @@
 
 # Depth Anything ONNX
 
+**###################################################################################**
+
+**This repository is just a slightly modified version of [Depth Anything ONNX](https://github.com/fabio-sim/Depth-Anything-ONNX) by fabio-sim for my own use.**
+
+**###################################################################################**
+
 - PINTO test S -> B -> L
 
   https://github.com/PINTO0309/Depth-Anything-ONNX/assets/33194443/b57fa49e-5225-46f1-8b58-986b8e21cb9c
